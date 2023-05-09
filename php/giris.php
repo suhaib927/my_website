@@ -22,20 +22,27 @@
                 }
                 if($username == $password)
                 {
-                   echo "<br><br><br><br><br><br><br>HOŞGELDİNİZ \"". strtoupper($username). "\"<br>";
-                   echo "<b>5 sn hakkında sayfasına yöneleceksiniz</b>";
+                    echo "<br><br><br><br><br><br><br>HOŞGELDİNİZ \"". strtoupper($username). "\"<br>";
+                    echo "<b>5 sn hakkında sayfasına yöneleceksiniz </b>";
+                    echo "<div class=\"spinner-border\" role=\"status\">
+                    <span class=\"visually-hidden\"></span>
+                  </div>";
                    header("refresh: 5; url = ../index.html"); 
                 }
                 else
                 {
                     echo "<br><br><br><br><br><br><br>!!!şifreniz hatalıdır!!!<br>";
                     echo "!!!şifreniz, mail adresinizin ilk kısmı ile aynı olmalıdır!!!<br>";
-                    echo "<b>3 saniye içerisinde giriş sayfasına yöneleceksiniz...</b>";
-                    header("refresh: 3; url = ../html/giris.html");
+                    echo "<b>5 saniye içerisinde giriş sayfasına yöneleceksiniz </b>";
+                    echo "<div class=\"spinner-border\" role=\"status\">
+                    <span class=\"visually-hidden\"></span>
+                  </div>";
+                    header("refresh: 5; url = ../html/giris.html");
                 }
             ?>
             </div>
         </div>
     </div>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
