@@ -16,11 +16,11 @@
                 $password = $_POST['password'];
                 $pos =strpos($email, '@');
                 
-                if ($pos !== false) {
+                if ($email !== null) {
                    
                     $username = substr($email, 0, $pos);
                 }
-                if($username == $password)
+                if($username == $password && $username != null)
                 {
                     echo "<br><br><br><br><br><br><br>HOŞGELDİNİZ \"". strtoupper($username). "\"<br>";
                     echo "<b>5 sn hakkında sayfasına yöneleceksiniz </b>";

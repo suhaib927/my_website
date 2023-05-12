@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>iletişim</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body class="bg-primary text-white text-center" style="margin: 40px;">
+<body class=" text-center">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="../index.html">SUHAYB</a>
@@ -37,104 +39,111 @@
             </div>
         </div>
     </nav>
-    <div class="row justify-content-center" style="margin-top: 105px">
-        <div class="col-lg-8 col-xl-7">
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                <!-- Name input-->
-                <div class="row">
-                    <div class="form-floating mb-3 col">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name...">
-                        <label for="name" style="padding-left:10px;">Ad</label>
-                    </div>
-                    <div class="form-floating mb-3 col">
-                        <input class="form-control" id="first-name" type="text" placeholder="Enter your first name...">
-                        <label for="first-name" style="padding-left:10px;">Soyad</label>
-                    </div>
-                </div>
-                <!-- Email address input-->
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="email" type="text" placeholder="name@example.com">
-                    <label for="email">Eposta</label>
-                </div>
-                <!-- password input-->
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="password" type="text" placeholder="(123) 456-7890">
-                    <label for="password">Şifre</label>
-                </div>
-                <!-- okul input-->
-                <div class="row">
-                    <div class="form-floating mb-3 col">
-                        <input class="form-control" type="text" name="universite" list="universiteler"
-                            placeholder="okul seçiniz...">
-                        <datalist id="universiteler">
-                            <option value="sau">Sakarya Üniversitesi</option>
-                            <option value="subu">Sakarya Uygulamalı Bilimler Üniversitesi</option>
-                            <option value="itu">İstanbul Teknik Üniversitesi</option>
-                        </datalist><br>
-                        <label for="phone" style="padding-left: 10px;">Okuduğunuz Üniversite</label>
-                    </div>
-                    <!-- cins input-->
-                    <div class="form-floating mb-3 col">
-                        <div class="btn-group " role="group" aria-label="Basic radio toggle button group"
-                            style="margin: 20px;">
-                            <input type="radio" class="btn-check" name="btnradio" id="Erkek" value="Erkek"
-                                autocomplete="off" checked>
-                            <label class="btn btn-outline-primary" for="Erkek">Erkek</label>
-
-                            <input type="radio" class="btn-check" name="btnradio" id="Kadin" value="Kadin"
-                                autocomplete="off">
-                            <label class="btn btn-outline-primary" for="Kadin">Kadın</label>
+    <form action="../php/form-bilgileri.php" method="post" name="benimForm" onsubmit="return formKontrol()">
+        <div class="row justify-content-center" style="margin: 120px 40px;">
+            <div class="col-lg-8 col-xl-7">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <!-- Name input-->
+                    <div class="row">
+                        <div class="form-floating mb-3 col">
+                            <input class="form-control" id="name" name="ad" type="text"
+                                placeholder="Enter your name...">
+                            <label for="name" style="padding-left:10px;">Ad</label>
+                        </div>
+                        <div class="form-floating mb-3 col">
+                            <input class="form-control" id="first-name" name="soyad" type="text"
+                                placeholder="Enter your first name...">
+                            <label for="first-name" style="padding-left:10px;">Soyad</label>
                         </div>
                     </div>
-                </div>
-                <div class="row gx-5">
-                    <div class="btn-group btn-group-sm col" role="group"
-                        aria-label="Basic checkbox toggle button group">
-                        <input type="checkbox" class="btn-check" id="web teknolojileri" value="web teknolojileri"
-                            autocomplete="off">
-                        <label class="btn btn-outline-primary" for="web teknolojileri">Web teknolojileri</label>
-
-                        <input type="checkbox" class="btn-check" id="nesneye dayali programlama"
-                            value="nesneye dayali programlama" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="nesneye dayali programlama">Nesneye dayalı
-                            programlama</label>
-
-                        <input type="checkbox" class="btn-check" id="matematik-2" value="matematik-2"
-                            autocomplete="off">
-                        <label class="btn btn-outline-primary" for="matematik-2">Matematik 2</label>
-
-                        <input type="checkbox" class="btn-check" id="fizik-2" value="fizik-2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="fizik-2">Fizik 2</label>
-
-                        <input type="checkbox" class="btn-check" id="Olasilik-ve-istatistik"
-                            value="Olasilik-ve-istatistik" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="Olasilik-ve-istatistik">Olasılık ve
-                            istatistik</label>
-
-                        <input type="checkbox" class="btn-check" id="ingilizce" value="ingilizce" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="ingilizce">Ingilizce</label>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="text" name="eposta" placeholder="name@example.com">
+                        <label for="email">Eposta</label>
                     </div>
-                    <select class="btn form-select-sm col-6 col-md-2" aria-label=".form-select-sm example">
-                        <option selected>FORM TİPİ</option>
-                        <option value="öneri" id="oneri">öneri</option>
-                        <option value="soru" id="soru">soru</option>
-                        <option value="şikayet" id="sikatet">şikayet</option>
-                        <option value="belirtilmedi" id="diger">diğer</option>
-                    </select>
-                </div>
+                    <!-- password input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password" type="text" name="sifre" placeholder="(123) 456-7890">
+                        <label for="password">Şifre</label>
+                    </div>
+                    <!-- okul input-->
+                    <div class="row">
+                        <div class="form-floating mb-3 col">
+                            <input class="form-control" id="universite" type="text" name="universite"
+                                list="universiteler" placeholder="okul seçiniz...">
+                            <datalist id="universiteler">
+                                <option value="sau">Sakarya Üniversitesi</option>
+                                <option value="subu">Sakarya Uygulamalı Bilimler Üniversitesi</option>
+                                <option value="itu">İstanbul Teknik Üniversitesi</option>
+                            </datalist><br>
+                            <label for="universite" style="padding-left: 10px;">Okuduğunuz Üniversite</label>
+                        </div>
+                        <!-- cinsiyet input-->
+                        <div class="form-floating mb-3 col">
+                            <div class="btn-group " role="group" aria-label="Basic radio toggle button group"
+                                style="margin: 20px;">
+                                <input type="radio" class="btn-check" name="cinsiyet" id="Erkek" value="Erkek"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="Erkek">Erkek</label>
 
-                <!-- Message input-->
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
-                        style="height: 10rem"></textarea>
-                    <label for="message">Message</label>
-                </div>
-                <!-- Submit Button-->
-                <input class="btn btn-primary btn-l" type="submit" value="GÖNDER" id="submitButton"></input>
-                <input class="btn btn-primary btn-l" type="reset" value="RESET" id="submitButton"></input>
-            </form>
+                                <input type="radio" class="btn-check" name="cinsiyet" id="Kadin" value="Kadin"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="Kadin">Kadın</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="btn-group btn-group-sm col" role="group"
+                            aria-label="Basic checkbox toggle button group">
+                            <input type="checkbox" class="btn-check" name="dese" id="web teknolojileri"
+                                value="web teknolojileri" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="web teknolojileri">Web teknolojileri</label>
+
+                            <input type="checkbox" class="btn-check" name="dese" id="nesneye dayali programlama"
+                                value="nesneye dayali programlama" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="nesneye dayali programlama">Nesneye dayalı
+                                programlama</label>
+
+                            <input type="checkbox" class="btn-check" name="dese" id="matematik-2" value="matematik-2"
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary" for="matematik-2">Matematik 2</label>
+
+                            <input type="checkbox" class="btn-check" name="dese" id="fizik-2" value="fizik-2"
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary" for="fizik-2">Fizik 2</label>
+
+                            <input type="checkbox" class="btn-check" name="dese" id="Olasilik-ve-istatistik"
+                                value="Olasilik-ve-istatistik" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="Olasilik-ve-istatistik">Olasılık ve
+                                istatistik</label>
+
+                            <input type="checkbox" class="btn-check" name="dese" id="ingilizce" value="ingilizce"
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary" for="ingilizce">Ingilizce</label>
+                        </div>
+                        <select class="btn form-select-sm col-6 col-md-2" name="form-tipi"
+                            aria-label=".form-select-sm example">
+                            <option selected>FORM TİPİ</option>
+                            <option value="öneri" id="oneri">öneri</option>
+                            <option value="soru" id="soru">soru</option>
+                            <option value="şikayet" id="sikatet">şikayet</option>
+                            <option value="belirtilmedi" id="diger">diğer</option>
+                        </select>
+                    </div>
+
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" name="mesaj" type="text"
+                            placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <!-- Submit Button-->
+                    <input class="btn btn-primary btn-l" type="submit" value="GÖNDER" id="btnGonder"></input>
+                    <input class="btn btn-primary btn-l" type="reset" value="RESET"></input>
+                </form>
+            </div>
         </div>
-    </div>
+    </form>
     <footer class="footer text-center" style="margin-top: 200px;">
         <div class="container">
             <div class="row">
@@ -187,6 +196,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/iletisim-kontrol.js"></script>
     <script src="../js/bootstrap.js"></script>
 </body>
 

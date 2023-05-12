@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles2.css">
-
+    
 </head>
-
-<body class="masthead text-center">
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+<body class="php masthead bg-primary text-white text-center">
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="../index.html">SUHAYB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="giris.html">gİrİş</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="ozgecmis.html">Özgeçmİş</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="sehrim.html">şehrİm</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="mirasimiz.html">mİrasımız</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded active"
-                            href="ilgi_alanlar.html">İlgİ
-                            alanlar</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="iletisim.html">İletİşİm</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="hakkinda.html">hakkında</a></li>
+                            href="../html/iletisim.html"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+</svg>  </a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="movies">
-        <div class="container">
-            <div class="row">
-
-            </div>
-        </div>
+<h1>Bilgileriniz Başarılı Bir Şekilde Gönderilmiştir</h1>
+<div class = "masthead-subheading font-weight-light mb-0" style="margin: 50px 350px;text-align:left">
+    <table class="font">
+        <tr>
+            <td>isim</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["ad"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>soyisim</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["soyad"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>eposta</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["eposta"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>şifre</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["sifre"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>cinsiyet</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["cinsiyet"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>okul</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["universite"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>form türü</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["form-tipi"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>ilgili dersler</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["ders"];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>mesajınız</td>
+            <td>:</td>
+            <td>
+                <?php
+                    echo $_POST["mesaj"];
+                ?>
+            </td>
+        </tr>
+        
+    </table>
+</div>
     </div>
     <footer class="footer text-center" style="margin-top: 200px;">
         <div class="container">
@@ -97,8 +167,5 @@
             </div>
         </div>
     </footer>
-    <script src="../js/ilgi-alanlari.js"></script>
-    <script src="../js/bootstrap.js"></script>
 </body>
-
 </html>
