@@ -6,7 +6,7 @@ const options = {
     }
 };
 
-fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=naruto', options)
+fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=breaking', options)
     .then(response => response.json())
     .then(data => {
         const list = data.d;
